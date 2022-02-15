@@ -1,4 +1,3 @@
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.mashape.unirest.http.HttpResponse;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 
 public class ApiConnector {
 
-    private final String key = "042d39bc31194fdb87b122895801abdb";
+    private final String key = "VALID API KEY";
     private final String address = "https://newsapi.org/v2/top-headlines";
     private final String country = "pl";
     private final String category = "business";
@@ -30,6 +29,7 @@ public class ApiConnector {
         } catch (UnirestException e) {
             e.printStackTrace();
         }
+
         Gson gson = new Gson();
         JSONObject responseObject = response.getBody().getObject();
         JSONArray jsonArray = responseObject.getJSONArray("articles");
